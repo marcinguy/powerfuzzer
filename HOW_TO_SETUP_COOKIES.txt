@@ -1,0 +1,10 @@
+Use getcookie.py.
+
+Usage: python getcookie.py <cookie_file> <url_with_form>
+
+
+It will dump the cookie to the file. After getting the cookie set Powerfuzzer to use it (Cookie button in the GUI)
+
+Cookies are save in LWP format. (LWPCookieJar)
+
+See SAMPLE_COOKIE.txt

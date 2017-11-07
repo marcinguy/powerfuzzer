@@ -1,0 +1,2 @@
+#LWP-Cookies-2.0
+Set-Cookie3: SID=a0b498e88f488dd8a48baf6778da85b9; path="/"; domain="test.com"; path_spec; discard; version=0

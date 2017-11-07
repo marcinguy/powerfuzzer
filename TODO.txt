@@ -1,0 +1,14 @@
+TODO:
+
+-add GUI to getcookie.py (incorporate into pf GUI?)
+
+-add custom check field to GUI (you can specify parameters that should be passed to fuzzer module in the GUI interface)
+
+-modularize checks perfomed by the scanning engine, so that users can add their customized checks/modules/plugins
+
+-add threading to scanning engine (for super fast scanning)
+
+-improve GUI/reporting
+
+-documentation/tutorials
+

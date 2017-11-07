@@ -1,0 +1,7 @@
+06/21/2008
+
+- rewrote BASIC AUTHENTICATION and COOKIE support - working & tested
+
+09/06/2008
+
+- applied various bugfixes for UNICODE/ASCII encoding and HTTP 500 reporting (lswww.py.patch, powerfuzzer-HTTPError-500-take2.patch, powerfuzzer.py.patch). Thanks for submitting your patches.
