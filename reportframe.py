@@ -33,7 +33,7 @@ class ReportFrame(wx.Frame):
         wx.CallAfter(self.rtc.SetFocus)
 
 
-	self.rtc.Freeze()
+        self.rtc.Freeze()
         self.rtc.BeginSuppressUndo()
 
         self.rtc.BeginParagraphSpacing(0, 20)
@@ -44,28 +44,28 @@ class ReportFrame(wx.Frame):
         self.rtc.BeginFontSize(14)
         self.rtc.WriteText("Findings summary")
         self.rtc.EndFontSize()
- 	self.rtc.EndAlignment()
-	self.rtc.EndBold()
-	self.rtc.Newline()
-	self.rtc.Newline()
-	self.rtc.Newline()
+        self.rtc.EndAlignment()
+        self.rtc.EndBold()
+        self.rtc.Newline()
+        self.rtc.Newline()
+        self.rtc.Newline()
 
         self.rtc.EndSuppressUndo()
         self.rtc.Thaw()
 
         
     def addFindings(self,data):
-
-	self.rtc.Freeze()
+        self.rtc.Freeze()
         self.rtc.BeginSuppressUndo()
-        self.rtc.BeginAlignment(rt.TEXT_ALIGNMENT_LEFT)        
-	self.rtc.BeginTextColour((0, 0, 255))
-      	for line in data:   
-	   self.rtc.WriteText(line)
-	   self.rtc.Newline()
+
+        self.rtc.BeginAlignment(rt.TEXT_ALIGNMENT_LEFT)
+        self.rtc.BeginTextColour((0, 0, 255))
+        for line in data:
+            self.rtc.WriteText(line)
+        self.rtc.Newline()
         
-	self.rtc.EndTextColour()
-	self.rtc.EndAlignment() 
+        self.rtc.EndTextColour()
+        self.rtc.EndAlignment() 
         self.rtc.EndSuppressUndo()
         self.rtc.Thaw()
        

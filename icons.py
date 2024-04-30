@@ -16,7 +16,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  US
 
 from wx import ImageFromStream, BitmapFromImage, EmptyIcon
-import cStringIO
+#import cStringIO
+import io
 
 
 #----------------------------------------------------------------------

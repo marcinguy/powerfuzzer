@@ -52,40 +52,40 @@ socket.setdefaulttimeout(6)
 try:
   fd=urllib2.urlopen(req)
 except IOError:
-  print "Error getting url"
+  print("Error getting url")
   sys.exit(1)
 try:
   htmlSource=fd.read()
 except socket.timeout:
-  print "Error fetching page"
+  print("Error fetching page")
   sys.exit(1)
 p=lswww.linkParser()
 try:
   p.feed(htmlSource)
-except HTMLParser.HTMLParseError,err:
+except err:
   if tidyhere==1:
     options = dict(output_xhtml=1, add_xml_decl=1, indent=1, tidy_mark=0)
     htmlSource=str(tidy.parseString(htmlSource,**options))
     try:
       p.reset()
       p.feed(htmlSource)
-    except HTMLParser.HTMLParseError,err:
+    except err:
       pass
 
 if len(p.forms)==0:
-  print "No forms found in this page !"
+  print("No forms found in this page !")
   sys.exit(1)
 
 myls=lswww.lswww(url,box=0,timeToQuit=0)
 i=0
 nchoice=0
 if len(p.forms)>1:
-  print "Choose the form you want to use :"
+  print("Choose the form you want to use :")
   for form in p.forms:
     print
-    print "%d) %s" % (i,myls.correctlink(form[0],current,currentdir,proto))
+    print("%d) %s" % (i,myls.correctlink(form[0],current,currentdir,proto)))
     for field,value in form[1].items():
-      print "\t"+field+" ("+value+")"
+      print("\t"+field+" ("+value+")")
     i=i+1
   ok=False
   while ok==False:
@@ -96,8 +96,8 @@ if len(p.forms)>1:
         ok=True
 
 form=p.forms[nchoice]
-print "Please enter values for the folling form :"
-print "url = "+myls.correctlink(form[0],current,currentdir,proto)
+print("Please enter values for the folling form :")
+print("url = "+myls.correctlink(form[0],current,currentdir,proto))
 
 d={}
 for field,value in form[1].items():
@@ -120,10 +120,10 @@ txheaders =  {'User-agent' : 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)',
 try:
     req = urllib2.Request(url, params, txheaders)
     handle = urllib2.urlopen(req)
-except IOError, e:
-    print "Error getting URL:",url
+except e:
+    print("Error getting URL:",url)
     sys.exit(1)
 
 for index, cookie in enumerate(cj):
-    print index,':',cookie
+    print(index,':',cookie)
 cj.save(COOKIEFILE,ignore_discard=True)

@@ -1,3 +1,8 @@
+30/04/2024
+
+Python3.10 porting
+
+
 06/21/2008
 
 - rewrote BASIC AUTHENTICATION and COOKIE support - working & tested
